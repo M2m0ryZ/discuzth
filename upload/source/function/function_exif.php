@@ -64,7 +64,7 @@ function getexif($img) {
 		exif_lang('FileType')		=>	$imgtype[$exif['FILE']['FileType']],
 		exif_lang('MimeType')		=>	$exif['FILE']['MimeType'],
 		exif_lang('FileSize')		=>	$exif['FILE']['FileSize'],
-		exif_lang('FileDateTime')			=>	date("Y-m-d H:i:s",$exif['FILE']['FileDateTime']),
+		exif_lang('FileDateTime')			=>	empty($exif['FILE']['FileDateTime'])?'':date("Y-m-d H:i:s",$exif['FILE']['FileDateTime']),
 		exif_lang('ImageDescription')		=>	$exif['IFD0']['ImageDescription'],
 		exif_lang('Make')			=>	$exif['IFD0']['Make'],
 		exif_lang('Model')			=>	$exif['IFD0']['Model'],
@@ -98,7 +98,7 @@ function getexif($img) {
 		exif_lang('ExposureProgram')		=>	$ExposureProgram[$exif['EXIF']['ExposureProgram']],
 		exif_lang('ExposureBiasValue')		=>	$exif['EXIF']['ExposureBiasValue']."EV",
 		exif_lang('ISOSpeedRatings')		=>	$exif['EXIF']['ISOSpeedRatings'],
-		exif_lang('ComponentsConfiguration')		=>	(bin2hex($exif['EXIF']['ComponentsConfiguration'])=="01020300"?"YCbCr":"RGB"),
+		exif_lang('ComponentsConfiguration')		=>	(bin2hex($exif['EXIF']['ComponentsConfiguration'])=="01020300"?"YCbCr":"RGB"),//'0x04,0x05,0x06,0x00'="RGB" '0x01,0x02,0x03,0x00'="YCbCr"
 		exif_lang('CompressedBitsPerPixel')		=>	$exif['EXIF']['CompressedBitsPerPixel']."Bits/Pixel",
 		exif_lang('FocusDistance')		=>	$exif['COMPUTED']['FocusDistance']."m",
 		exif_lang('FocalLength')			=>	$exif['EXIF']['FocalLength']."mm",

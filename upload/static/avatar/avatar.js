@@ -295,10 +295,10 @@ function refreshAvatarCanvasForDisplay() {
 
     ctx.fillStyle = "black";
     ctx.font = "bold 16px Arial";
-    ctx.fillText('อัปโหลดเสร็จแล้ว!', dwidth - 160,155);
+    ctx.fillText('อัปโหลดเรียบร้อยแล้ว', dwidth - 160,155);
     ctx.fillStyle = "grey";
     ctx.font = "bold 12px Arial";
-    ctx.fillText('นี่คือรูปโปรไฟล์สามแบบของคุณ', dwidth - 200, 180);        
+    ctx.fillText('นี่คือรูปโปรไฟล์จำนวนสามขนาดของคุณ', dwidth - 200, 180);        
 }
 
 function rectAvatarDone(res) {

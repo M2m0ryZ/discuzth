@@ -509,7 +509,7 @@ if(empty($_GET['viewpid'])) {
 		(!empty($_GET['checkrush']) ? '&amp;checkrush='.$_GET['checkrush'] : '').
 		(!empty($_GET['modthreadkey']) ? '&amp;modthreadkey='.rawurlencode($_GET['modthreadkey']) : '').
 		$specialextra;
-	$multipage = multi($_G['forum_thread']['replies'] + 1, $_G['ppp'], $page, 'forum.php?mod=viewthread&tid='.$_G['tid'].$multipageparam);
+	$multipage = multi($_G['forum_thread']['replies'] + ($ordertype != 1 ? 1 : 0), $_G['ppp'], $page, 'forum.php?mod=viewthread&tid='.$_G['tid'].$multipageparam);
 } else {
 	$_GET['viewpid'] = intval($_GET['viewpid']);
 	$pageadd = "AND p.pid='{$_GET['viewpid']}'";
@@ -1088,7 +1088,7 @@ function viewthread_procpost($post, $lastvisit, $ordertype, $maxposition = 0) {
 		$post['newpostanchor'] = '';
 	}
 
-	$post['lastpostanchor'] = ($ordertype != 1 && $_G['forum_numpost'] == $_G['forum_thread']['replies']) || ($ordertype == 1 && $_G['forum_numpost'] == $_G['forum_thread']['replies'] + 2) ? '<a name="lastpost"></a>' : '';
+	$post['lastpostanchor'] = ($ordertype != 1 && $_G['forum_numpost'] == $_G['forum_thread']['replies']) || ($ordertype == 1 && $_G['forum_numpost'] == $_G['forum_thread']['replies'] + 2 && (!$_G['forum_thread']['replies'] || !$post['first'])) ? '<a name="lastpost"></a>' : '';
 
 	if(empty($post['hotrecommended']) && $post['incurpage']) {
 		if($_G['forum_pagebydesc']) {

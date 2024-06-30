@@ -1023,6 +1023,7 @@ $lang = array (
   'diy_template_extension_invalid' => 'ส่วนขยายไฟล์เทมเพลตไม่ถูกต้อง',
   'diy_template_noexist' => 'ไม่พบไฟล์เทมเพลต',
   'topic_title_cannot_be_empty' => 'ขออภัย! หัวข้อชื่อไม่สามารถว่างเปล่า',
+  'topic_has_on_template' => 'ไม่พบเทมเพลตที่ตรงกับหัวข้อนี้',
   'topic_name_duplicated' => 'ขออภัย! ชื่อหัวข้อพิเศษไม่สามารถซ้ำได้',
   'topic_created_failed' => 'ขออภัย! สร้างหัวข้อล้มเหลว',
   'comment_comment_noexist' => 'ขออภัย! ความคิดเห็นในบทความไม่มีอยู่',

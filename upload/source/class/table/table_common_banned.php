@@ -13,7 +13,6 @@ if(!defined('IN_DISCUZ')) {
 
 class table_common_banned extends discuz_table
 {
-	
 	public function __construct() {
 
 		$this->_table = 'common_banned';
@@ -32,11 +31,10 @@ class table_common_banned extends discuz_table
 	}
 
 	public function fetch_all_order_dateline() {
-		return DB::fetch_all('SELECT * FROM %t ORDER BY dateline', array($this->_table));
+		return DB::fetch_all('SELECT * FROM %t ORDER BY dateline DESC', array($this->_table));
 	}
 
 	public function fetch_all($ids = array(), $force_from_db = false) {
-		
 		if (defined('DISCUZ_DEPRECATED')) {
 			throw new Exception('NotImplementedException');
 			return parent::fetch_all($ids, $force_from_db);
@@ -79,7 +77,7 @@ class table_common_banned extends discuz_table
 		$iphex = ip::ip_to_hex_str($ip);
 		$banned = true;
 		if ($this->_allowmem) $banned = memory('zscore', 'index', $iphex, 0, $this->_pre_cache_key);
-		if ($banned === false || !$this->_allowmem) { 
+		if ($banned === false || !$this->_allowmem) {
 			$iphex_val = '0x' . $iphex;
 			$ret = DB::result_first(
 				"SELECT id from %t WHERE expiration > %d AND lowerip <= %i AND upperip >= %i",
@@ -93,9 +91,8 @@ class table_common_banned extends discuz_table
 			return false;
 		}
 
-		
 		return $banned === 1;
-	} 
+	}
 
 }
 

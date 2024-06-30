@@ -23,7 +23,7 @@ d41d8cd98f00b204e9800998ecf8427e *data/tmp/index.htm
 d41d8cd98f00b204e9800998ecf8427e *data/view/index.htm
 10535839824beb48f37e841da38e303e *api/dbbak.php
 d41d8cd98f00b204e9800998ecf8427e *api/index.htm
-0ee893fc567b995a7c8e13e86d7e8992 *control/admin/admin.php
+14be3ba21aad1ccea2ca79a8225d56cc *control/admin/admin.php
 0942fd82578cd67d050f274a545963ea *control/admin/app.php
 de28f7f5888d1821996d71d00bd24284 *control/admin/badword.php
 72a4339c80c4a1dea4a2e644fa783e53 *control/admin/cache.php
@@ -218,7 +218,7 @@ c8323955b8b6a4393372de9e122853a3 *js/calendar.js
 0e8249b8c83ab93350d6864e106da182 *js/common.js
 7215ee9c7d9dc229d2921a40e899ec5f *js/index.htm
 904fbd9ee2c415bbee0fa4f9ccce4f83 *js/pm_editor.js
-525021e9acfede750636d9a8b9ea4ef6 *release/release.php
+183314e59003aa3d55264ff03277c54f *release/release.php
 f5ca4573eda7e4e57c93e7f56893b354 *view/default/admin.lang.php
 5de71114c9c4e1db2a69abab5b7428b1 *view/default/admin_admin.htm
 d05e6869168a47c29e4a07226f344314 *view/default/admin_app.htm

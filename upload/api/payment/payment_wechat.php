@@ -183,11 +183,9 @@ class payment_wechat extends payment_base {
 	}
 
 	public function v3_wechat_support() {
-		
 		if(function_exists('sodium_crypto_aead_aes256gcm_is_available') && sodium_crypto_aead_aes256gcm_is_available()) {
 			return true;
 		}
-		
 		if(PHP_VERSION_ID >= 70100 && in_array('aes-256-gcm', openssl_get_cipher_methods())) {
 			return true;
 		}
@@ -513,11 +511,9 @@ class payment_wechat extends payment_base {
 			return false;
 		}
 
-		
 		if(function_exists('sodium_crypto_aead_aes256gcm_is_available') && sodium_crypto_aead_aes256gcm_is_available()) {
 			return sodium_crypto_aead_aes256gcm_decrypt($ciphertext, $associateddata, $noncestr, $this->settings['v3_key']);
 		}
-		
 		if(PHP_VERSION_ID >= 70100 && in_array('aes-256-gcm', openssl_get_cipher_methods())) {
 			$ctext = substr($ciphertext, 0, -16);
 			$authTag = substr($ciphertext, -16);
@@ -528,7 +524,7 @@ class payment_wechat extends payment_base {
 		return false;
 	}
 
-	private function wechat_request($api, $data = null) {
+	private function wechat_request($api, $data = array()) {
 		$client = filesock::open(array(
 			'url' => $api,
 			'method' => 'POST',

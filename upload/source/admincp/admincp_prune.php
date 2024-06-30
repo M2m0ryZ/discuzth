@@ -57,7 +57,6 @@ if(!submitcheck('prunesubmit')) {
 		array('prune_search', !$searchsubmit),
 		array('nav_prune', $searchsubmit)
 	));
-	
 	showtips('prune_tips');
 	echo <<<EOT
 <script type="text/javascript" src="static/js/calendar.js"></script>
@@ -69,7 +68,7 @@ function page(number) {
 </script>
 EOT;
 
-	$posttableselect = getposttableselect();
+	$posttableselect = getposttableselect_admin();
 	showtagheader('div', 'searchposts', !$searchsubmit);
 	showformheader("prune".($operation ? '&operation='.$operation : ''), '', 'pruneforum');
 	showhiddenfields(array('page' => $page, 'pp' => $_GET['pp'] ? $_GET['pp'] : $_GET['perpage']));
@@ -95,7 +94,6 @@ EOT;
 	showtablefooter();
 	showformfooter();
 	showtagfooter('div');
-	
 
 } else {
 

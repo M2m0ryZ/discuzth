@@ -19,7 +19,6 @@ showsubmenu('collection', array(
 	array('collection_comment', 'collection&operation=comment', $current['comment']),
 	array('collection_recommend', 'collection&operation=recommend', $current['recommend'])
 ));
-
 echo '<script src="' . STATICURL . 'js/calendar.js"></script>';
 
 if($operation == 'comment') {
@@ -236,7 +235,7 @@ if($operation == 'comment') {
 			}
 			$rCollection = $_GET['ctidorder'][$rCtid];
 		}
-		$collectionrecommend['ctids'] = removeNonExistsCollection($collectionrecommend['ctids']);
+		$collectionrecommend['ctids'] = is_array($collectionrecommend['ctids']) ? removeNonExistsCollection($collectionrecommend['ctids']) : array();
 		$collectionrecommend['autorecommend'] = intval($_GET['settingnew']['autorecommend']);
 		$collectionrecommend['adminrecommend'] = count($collectionrecommend['ctids']);
 		asort($collectionrecommend['ctids']);
@@ -258,5 +257,4 @@ function removeNonExistsCollection($collectionrecommend) {
 	}
 	return $collectionrecommend;
 }
-
 ?>
